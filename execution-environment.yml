@@ -3,17 +3,19 @@
 version: 3
 
 dependencies:
+  python_interpreter:
+    python_path: /opt/app-root/bin/python3
   ansible_core:
     package_pip: ansible-core==2.19.3 # https://pypi.org/project/ansible-core/
   ansible_runner:
     package_pip: ansible-runner
-  galaxy: files/galaxy-requirements.txt
+  galaxy: files/galaxy-requirements.yml
   python: files/requirements.txt
   system: files/bindep.txt
 
 images:
   base_image:
-    name: registry.access.redhat.com/ubi9/python-312
+    name: registry.access.redhat.com/ubi9/python-312:latest
 
 additional_build_files:
     - src: files/ansible.cfg
@@ -21,13 +23,9 @@ additional_build_files:
 
 additional_build_steps:
   prepend_base:
-    - USER root
     - ENV TZ=Europe/Moscow
-    - RUN pip install --upgrade pip
+    - RUN /opt/app-root/bin/pip install --upgrade pip
 
   prepend_galaxy:
     - COPY _build/configs/ansible.cfg /etc/ansible/ansible.cfg
 
-options:
-    workdir: /runner
-    user: 1001
