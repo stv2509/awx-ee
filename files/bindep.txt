@@ -1,0 +1,4 @@
+curl [platform:rpm]
+git-lfs [platform:rpm]
+nc [platform:rpm]
+wget [platform:rpm]

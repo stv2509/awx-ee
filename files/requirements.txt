@@ -1,0 +1,15 @@
+bcrypt
+colorama
+cryptography
+dnspython
+Jinja2
+json5
+pyOpenSSL
+python-dateutil
+python-dotenv
+python-ldap
+pyvmomi
+pywinrm
+requests
+setuptools
+urllib3

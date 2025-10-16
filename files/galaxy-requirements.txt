@@ -1,0 +1,16 @@
+ansible.netcommon
+ansible.posix
+ansible.utils
+ansible.windows
+awx.awx
+community.crypto
+community.dns
+community.general
+community.network
+community.postgresql
+community.proxysql
+community.vmware
+community.windows
+microsoft.ad
+vmware.vmware
+vmware.vmware_rest
