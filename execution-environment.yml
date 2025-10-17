@@ -24,8 +24,6 @@ additional_build_files:
 additional_build_steps:
   prepend_base:
     - ENV TZ=Europe/Moscow
-    - RUN /opt/app-root/bin/pip install --upgrade pip
-
-  prepend_galaxy:
+    - RUN mkdir /etc/ansible/ && /opt/app-root/bin/pip install --upgrade pip
     - COPY _build/configs/ansible.cfg /etc/ansible/ansible.cfg
 
