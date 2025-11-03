@@ -1,4 +1,5 @@
 bcrypt
+certifi
 colorama
 cryptography
 dnspython
